@@ -32,8 +32,8 @@ class InsertTicket extends AbstractController
             ->add('save', SubmitType::class, ['label' => 'Create Task'])
             ->getForm();
 
-            return $this->render('ticket/insert.html.twig', [
-                'arrayform' => $form,
+            return $this->renderForm('ticket/insert.html.twig', [
+                'arrayform' => $form
             ]);
     }
 }
