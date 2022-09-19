@@ -340,11 +340,11 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Curl"/>
       </call>
     </service>
-    <service id="App\Controller\InsertTicket" class="App\Controller\InsertTicket" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\InsertController" class="App\Controller\InsertController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\InsertTicket"/>
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\InsertController"/>
       </call>
     </service>
     <service id="App\Controller\LuckyController" class="App\Controller\LuckyController" autowire="true" autoconfigure="true"/>
@@ -6108,9 +6108,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Curl" class="App\Controller\Curl" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Curl" class="App\Controller\Curl" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Curl" class="App\Controller\Curl" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InsertTicket" class="App\Controller\InsertTicket" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InsertTicket" class="App\Controller\InsertTicket" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\InsertTicket" class="App\Controller\InsertTicket" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6876,9 +6876,9 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
-    <service id=".service_locator.GNc8e5B.App\Controller\InsertTicket" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\InsertTicket"/>
-      <argument>App\Controller\InsertTicket</argument>
+    <service id=".service_locator.GNc8e5B.App\Controller\InsertController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\InsertController"/>
+      <argument>App\Controller\InsertController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
