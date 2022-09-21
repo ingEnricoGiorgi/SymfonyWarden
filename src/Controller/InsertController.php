@@ -17,36 +17,35 @@ class InsertController extends AbstractController
      */  
     public function prova()
     {
+        $TEST = $this->getParameter('app.enrico');
         $client = new CurlHttpClient();
-        
-        
-               echo 'prova';
+     
                $data=[
                 'nome'=>'provauno',
                 'cognome'=>'provauno'
                ];
-  
-
-            
-
+                
+                if($TEST =="prova"){
+               echo "token approvato";
                $url = 'https://enrico.reflexmania.it/rest/V1/casobase/';
-               //echo json_encode($data).'\n';
-               //$dio=json_encode($data);
-               $dio= json_encode( array( "customer"=> $data ) );
+               $data = array("nome" => "api", "cognome"=>"api", "ticketid"=>"17", "email"=>"api@gmail.com");
+               $postdata = json_encode($data);
                $curl = curl_init();
                curl_setopt($curl, CURLOPT_URL, $url);
                curl_setopt($curl, CURLOPT_POST, true);
                curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json", 'Content-Type:application/json'));
-               curl_setopt($curl, CURLOPT_POSTFIELDS, $dio);
+               curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata );
                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                $resp = curl_exec($curl);
                curl_close($curl);
-               
-               echo $resp;
+               } else {
+                echo "token rifiutato";
+               }
+              echo $resp;
          
             return new Response(
-                '<html><body>Richiesta get: </body></html>'
+                '<html><body> </body></html>'
             );
             
            
