@@ -333,12 +333,12 @@
       <tag name="controller.service_arguments"/>
       <tag name="routing.route_loader"/>
     </service>
-    <service id="App\Controller\Curl" class="App\Controller\Curl" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\GetController" class="App\Controller\GetController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id=".debug.http_client"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\Curl"/>
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\GetController"/>
       </call>
     </service>
     <service id="App\Controller\InsertController" class="App\Controller\InsertController" public="true" autowire="true" autoconfigure="true">
@@ -6107,9 +6107,9 @@
     <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Curl" class="App\Controller\Curl" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Curl" class="App\Controller\Curl" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\Curl" class="App\Controller\Curl" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\GetController" class="App\Controller\GetController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\GetController" class="App\Controller\GetController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\GetController" class="App\Controller\GetController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -6872,9 +6872,9 @@
         <argument key="twig" type="service_closure" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".service_locator.GNc8e5B.App\Controller\Curl" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\Curl"/>
-      <argument>App\Controller\Curl</argument>
+    <service id=".service_locator.GNc8e5B.App\Controller\GetController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\GetController"/>
+      <argument>App\Controller\GetController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>

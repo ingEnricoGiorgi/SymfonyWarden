@@ -26,9 +26,10 @@ class InsertController extends AbstractController
                ];
                 
                 if($TEST =="prova"){
-               echo "token approvato";
+               echo "token approvato symfony";
+               echo "<br>";
                $url = 'https://enrico.reflexmania.it/rest/V1/casobase/';
-               $data = array("nome" => "api", "cognome"=>"api", "ticketid"=>"17", "email"=>"api@gmail.com");
+               $data = array("token"=>"tokenmagento","nome" => "api2", "cognome"=>"api2", "ticketid"=>"18", "email"=>"api2@gmail.com");
                $postdata = json_encode($data);
                $curl = curl_init();
                curl_setopt($curl, CURLOPT_URL, $url);

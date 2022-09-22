@@ -5,8 +5,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
-
-class Curl extends AbstractController
+//https://app.symfonyenrico.test/curl/curl
+class GetController extends AbstractController
 {
 
    
@@ -18,18 +18,23 @@ class Curl extends AbstractController
     }
     
     /**  
-     * @Route("/curl/curl", name="order")  
+     * @Route("/getcontroller/getprova", name="order")  
      */  
-   public function curl()
+   public function getprova()
     {
         $userFirstName = 'enrico';
         $userNotifications = ['cani', 'gatti'];
-      //   echo "prova";
-      //  exit;
+    
          $id=6;
          $response = $this->client->request(
             'GET', //bisogna aggiungere il rest
-            'https://enrico.reflexmania.it/rest/V1/ticket/'.$id
+            'https://enrico.reflexmania.it/rest/V1/ticket/'.$id,
+         [         
+             'headers' =>
+           [ 
+            'Authorization' => 'Bearer gaehq62wfxg4fpt9fygdg4cthka13pae' 
+           ]
+          ]
         );
 
         $statusCode = $response->getStatusCode();
