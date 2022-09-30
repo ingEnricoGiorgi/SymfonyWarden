@@ -348,6 +348,14 @@
         <argument type="service" id=".service_locator.GNc8e5B.App\Controller\InsertController"/>
       </call>
     </service>
+    <service id="App\Controller\InsertFormController" class="App\Controller\InsertFormController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <argument type="service" id=".debug.http_client"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.GNc8e5B.App\Controller\InsertFormController"/>
+      </call>
+    </service>
     <service id="App\Controller\LuckyController" class="App\Controller\LuckyController" autowire="true" autoconfigure="true"/>
     <service id="App\Security\ApiKeyAuthenticator" class="App\Security\ApiKeyAuthenticator" autowire="true" autoconfigure="true"/>
     <service id="argument_metadata_factory" class="Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadataFactory"/>
@@ -6113,6 +6121,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\InsertController" class="App\Controller\InsertController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\InsertFormController" class="App\Controller\InsertFormController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\InsertFormController" class="App\Controller\InsertFormController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\InsertFormController" class="App\Controller\InsertFormController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".service_locator.gSv9zYw" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6884,6 +6895,12 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.GNc8e5B" method="withContext"/>
     </service>
+    <service id=".service_locator.GNc8e5B.App\Controller\InsertFormController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\InsertFormController"/>
+      <argument>App\Controller\InsertFormController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.GNc8e5B" method="withContext"/>
+    </service>
     <service id=".service_locator.J4b.DPX" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -7077,8 +7094,18 @@
       </argument>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface">
-      <argument type="collection"/>
-      <argument>6</argument>
+      <argument type="collection">
+        <argument key="headers" type="collection">
+          <argument key="X-Powered-By">ACME App</argument>
+        </argument>
+        <argument key="max_redirects">7</argument>
+        <argument key="verify_peer">false</argument>
+        <argument key="verify_host">false</argument>
+        <argument key="max_duration">600</argument>
+        <argument key="timeout">300</argument>
+        <argument key="resolve" type="collection"/>
+      </argument>
+      <argument>10</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.http_client" on-invalid="ignore"/>
       </call>

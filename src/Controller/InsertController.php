@@ -7,19 +7,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Component\HttpClient\CurlHttpClient;
+//https://app.symfonyenrico.test/insertcontroller/richiestapost
 
 class InsertController extends AbstractController
 {
     private $client;
 
      /**  
-     * @Route("/prova/prova", name="prova")  
+     * @Route("/insertcontroller/richiestapost", name="prova")  
      */  
-    public function prova()
+    public function richiestaPost()
     {
         $TEST = $this->getParameter('app.enrico');
         $client = new CurlHttpClient();
-     
+        $authorization = "Authorization: Bearer gzxr26do5ssy19oe0mfpy6y185lilpsk";
                $data=[
                 'nome'=>'provauno',
                 'cognome'=>'provauno'
@@ -34,7 +35,7 @@ class InsertController extends AbstractController
                $curl = curl_init();
                curl_setopt($curl, CURLOPT_URL, $url);
                curl_setopt($curl, CURLOPT_POST, true);
-               curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json", 'Content-Type:application/json'));
+               curl_setopt($curl, CURLOPT_HTTPHEADER, array("Accept: application/json", 'Content-Type:application/json', $authorization));
                curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata );
                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 

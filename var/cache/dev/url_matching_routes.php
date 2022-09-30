@@ -9,7 +9,8 @@ return [
     false, // $matchHost
     [ // $staticRoutes
         '/getcontroller/getprova' => [[['_route' => 'order', '_controller' => 'App\\Controller\\GetController::getprova'], null, null, null, false, false, null]],
-        '/prova/prova' => [[['_route' => 'prova', '_controller' => 'App\\Controller\\InsertController::prova'], null, null, null, false, false, null]],
+        '/insertcontroller/richiestapost' => [[['_route' => 'prova', '_controller' => 'App\\Controller\\InsertController::richiestaPost'], null, null, null, false, false, null]],
+        '/postform/requestPost' => [[['_route' => 'requestPost', '_controller' => 'App\\Controller\\InsertFormController::requestPost'], null, null, null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],

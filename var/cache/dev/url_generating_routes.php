@@ -4,7 +4,8 @@
 
 return [
     'order' => [[], ['_controller' => 'App\\Controller\\GetController::getprova'], [], [['text', '/getcontroller/getprova']], [], [], []],
-    'prova' => [[], ['_controller' => 'App\\Controller\\InsertController::prova'], [], [['text', '/prova/prova']], [], [], []],
+    'prova' => [[], ['_controller' => 'App\\Controller\\InsertController::richiestaPost'], [], [['text', '/insertcontroller/richiestapost']], [], [], []],
+    'requestPost' => [[], ['_controller' => 'App\\Controller\\InsertFormController::requestPost'], [], [['text', '/postform/requestPost']], [], [], []],
     'app_lucky_number' => [['max'], ['_controller' => 'App\\Controller\\LuckyController::number'], [], [['variable', '/', '[^/]++', 'max', true], ['text', '/lucky/number']], [], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     '_wdt' => [['token'], ['_controller' => 'web_profiler.controller.profiler::toolbarAction'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/_wdt']], [], [], []],

@@ -28,11 +28,11 @@ class GetController extends AbstractController
          $id=6;
          $response = $this->client->request(
             'GET', //bisogna aggiungere il rest
-            'https://enrico.reflexmania.it/rest/V1/ticket/'.$id,
+            'https://app.magentowarden.test/rest/V1/ticket/'.$id,
          [         
              'headers' =>
            [ 
-            'Authorization' => 'Bearer gaehq62wfxg4fpt9fygdg4cthka13pae' 
+            'Authorization' => 'Bearer gzxr26do5ssy19oe0mfpy6y185lilpsk' 
            ]
           ]
         );
